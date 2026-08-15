@@ -32,7 +32,7 @@ name: AI DevOps CI/CD Demo using GitHub Actions
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
