@@ -46,19 +46,19 @@ jobs:
       # 6. Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/ai-devops-advanced .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ai-devops-advanced .
 
       # 7. Login to DockerHub
       - name: Login to DockerHub
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | \
-            docker login -u "${{ secrets.DOCKER_USERNAME }}" \
+            docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" \
             --password-stdin
 
       # 8. Push Docker image
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/ai-devops-advanced
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ai-devops-advanced
 
       # 9. AI log analysis if any previous step fails
       - name: AI Log Analysis (on failure)
