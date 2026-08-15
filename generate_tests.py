@@ -44,8 +44,7 @@ tests = ""
 if "```" in tests:
 tests = tests.replace("```python", "").replace("```", "").strip()
 # Step 2: Fix common wrong imports
-tests = tests.replace("from your_flask_app import app", "from app
-import app")
+tests = tests.replace("from your_flask_app import app", "from app import app")
 tests = tests.replace("from main import app", "from app import app")
 tests = tests.replace("flask_app", "app")
 # Step 3: Ensure correct import exists
